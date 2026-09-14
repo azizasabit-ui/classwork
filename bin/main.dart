@@ -4,21 +4,17 @@ double processOrder({
   String? promoCode,
   double? deliveryFee,
 }) {
-  // Default delivery fee if it is null
   final double finalDeliveryFee = deliveryFee ?? 500.0;
 
-  // Calculate discount
   double discount = 0.0;
 
   if (promoCode == 'SAVE10') {
     discount = itemPrice * 0.10;
   }
 
-  // Calculate final total
   final double finalTotal =
       itemPrice - discount + finalDeliveryFee;
 
-  // Print order summary
   print('--- Order Summary ---');
   print('Order ID: $orderId');
   print('Item price: ${itemPrice.toStringAsFixed(2)} ₸');
